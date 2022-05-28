@@ -2,6 +2,10 @@
   --logo-font: "Cinzel", serif;
   --title-font: "DM Serif Text", serif;
   --body-font: "Roboto", sans-serif;
+  --main-yellow: #eb9c00;
+  --pale-yellow: #eeaf32;
+  --dark-yellow: #6b4700;
+  --dull-yellow: #b87a00;
 }
 html {
   font-size: 16px;
