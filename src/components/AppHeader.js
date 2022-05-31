@@ -6,9 +6,7 @@ const AppHeader = () => {
   return (
     <div className="AppHeader">
       <div className="nav-bar">
-        <div className="nav-logo">
-          <img src={logo} alt="CN"></img>
-        </div>
+        <div className="nav-logo">CN</div>
         <ul className="nav-link">
           <li className="nav-item">
             <a href="">Home</a>
