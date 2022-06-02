@@ -18,6 +18,9 @@ const AppHeader = () => {
     <div className="AppHeader">
       <div className="nav-bar">
         <div className="nav-logo">CN</div>
+        <div className="nav-action" onClick={toggleMenu}>
+          <i className="fa-solid fa-burger"></i>
+        </div>
         <ul className="nav-link">
           <li className="nav-item">
             <a href="">Home</a>
@@ -32,9 +35,6 @@ const AppHeader = () => {
             <a href="">Hire me</a>
           </li>
         </ul>
-        <div className="nav-action" onClick={toggleMenu}>
-          <i className="fa-solid fa-burger"></i>
-        </div>
       </div>
     </div>
   );
