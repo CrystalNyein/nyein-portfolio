@@ -21,6 +21,9 @@ const AppHeader = () => {
             <a href="">Hire me</a>
           </li>
         </ul>
+        <div className="nav-action">
+          <i className="fa-solid fa-burger"></i>
+        </div>
       </div>
     </div>
   );

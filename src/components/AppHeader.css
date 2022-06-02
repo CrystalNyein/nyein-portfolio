@@ -30,3 +30,7 @@
   text-decoration: none;
   color: var(--pale-yellow);
 }
+.nav-action > * {
+  color: var(--pale-yellow);
+  font-size: 1.8rem;
+}
