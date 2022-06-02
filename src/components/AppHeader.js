@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/images/Logo.png";
 import "./AppHeader.css";
 
 const AppHeader = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = (e) => {
+    if (menuOpen) {
+      e.target.classList.remove("fa-xmark");
+      e.target.classList.add("fa-burger");
+    } else {
+      e.target.classList.remove("fa-burger");
+      e.target.classList.add("fa-xmark");
+    }
+    setMenuOpen(!menuOpen);
+  };
   return (
     <div className="AppHeader">
       <div className="nav-bar">
@@ -21,7 +32,7 @@ const AppHeader = () => {
             <a href="">Hire me</a>
           </li>
         </ul>
-        <div className="nav-action">
+        <div className="nav-action" onClick={toggleMenu}>
           <i className="fa-solid fa-burger"></i>
         </div>
       </div>
