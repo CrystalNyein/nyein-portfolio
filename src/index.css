@@ -6,7 +6,7 @@
   --pale-yellow: #eeaf32;
   --dark-yellow: #6b4700;
   --dull-yellow: #b87a00;
-  --bg-yellow: #150e00;
+  --bg-yellow: #281b00;
 }
 html {
   font-size: 16px;
@@ -17,7 +17,19 @@ body {
   font-family: var(--body-font);
   /* background-color: var(--bg-yellow); */
 }
-
+.btn {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--main-yellow);
+  border: none;
+  border-radius: 0.3rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  font-size: 0.95rem;
+  font-family: var(--title-font);
+}
+.btn:hover {
+  background-color: var(--pale-yellow);
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
