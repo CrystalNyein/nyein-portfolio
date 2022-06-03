@@ -6,7 +6,7 @@
   --pale-yellow: #eeaf32;
   --dark-yellow: #6b4700;
   --dull-yellow: #b87a00;
-  --bg-yellow: #302000;
+  --bg-yellow: #150e00;
 }
 html {
   font-size: 16px;
@@ -15,6 +15,7 @@ body {
   margin: 0;
   outline: none;
   font-family: var(--body-font);
+  /* background-color: var(--bg-yellow); */
 }
 
 code {
