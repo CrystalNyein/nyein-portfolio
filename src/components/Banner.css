@@ -1,0 +1,31 @@
+.Banner {
+  position: relative;
+  height: calc(100vh - 4.5rem);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.banner-text {
+  margin-right: 5vw;
+  width: 35rem;
+  max-width: 90vw;
+  margin-bottom: 5rem;
+}
+.banner-title {
+  margin-top: 0;
+  font-size: 3.2rem;
+  font-family: var(--title-font);
+}
+.banner-title span {
+  color: var(--main-yellow);
+}
+.banner-detail {
+  line-height: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 2.2rem;
+}
+.banner-wave {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
