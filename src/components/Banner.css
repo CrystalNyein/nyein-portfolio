@@ -1,6 +1,6 @@
 .Banner {
   position: relative;
-  height: calc(100vh - 4.5rem);
+  height: 100vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
