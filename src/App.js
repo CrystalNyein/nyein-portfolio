@@ -3,7 +3,7 @@ import AboutMe from "./components/Aboutme";
 import AppHeader from "./components/AppHeader";
 import Banner from "./components/Banner";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <AppHeader />
@@ -11,6 +11,6 @@ function App() {
       <AboutMe />
     </div>
   );
-}
+};
 
 export default App;
