@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./AppHeader.css";
 
-const AppHeader = () => {
+const AppHeader = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navLink = useRef(null);
   const toggleMenu = (e) => {
@@ -26,16 +26,32 @@ const AppHeader = () => {
           </div>
         </div>
         <ul className="nav-link" ref={navLink}>
-          <li className="nav-item current">
+          <li
+            className={
+              props.section == "Home" ? "nav-item current" : "nav-item"
+            }
+          >
             <a href="">Home</a>
           </li>
-          <li className="nav-item">
+          <li
+            className={
+              props.section == "About" ? "nav-item current" : "nav-item"
+            }
+          >
             <a href="">About me</a>
           </li>
-          <li className="nav-item">
+          <li
+            className={
+              props.section == "Project" ? "nav-item current" : "nav-item"
+            }
+          >
             <a href="">My Projects</a>
           </li>
-          <li className="nav-item">
+          <li
+            className={
+              props.section == "Hire" ? "nav-item current" : "nav-item"
+            }
+          >
             <a href="">Hire me</a>
           </li>
         </ul>
