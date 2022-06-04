@@ -1,6 +1,9 @@
 .AppHeader {
   height: 4.5rem;
   background-color: var(--bg-yellow);
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 .nav-bar {
   height: 4.5rem;
