@@ -4,7 +4,7 @@ import laptop from "../assets/images/laptop.png";
 
 const Banner = () => {
   return (
-    <div className="Banner">
+    <div id="Banner" className="Banner">
       <div className="banner-text">
         <h1 className="banner-title">
           Hello! I'm <span>Nyein.</span>
