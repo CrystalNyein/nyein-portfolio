@@ -6,18 +6,25 @@ import Banner from "./components/Banner";
 
 const App = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [section, setSection] = useState("Home");
   const handleScroll = () => {
-    setScrollPosition(window.pageYOffset);
+    const position = window.pageYOffset;
+    if (position < 798) {
+      setSection("Home");
+    } else if (position >= 798) {
+      setSection("About");
+    }
+    setScrollPosition(position);
   };
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [scrollPosition]);
+  }, []);
   return (
     <div className="App">
-      <AppHeader />
+      <AppHeader section={section} setSection={setSection} />
       <Banner />
       <AboutMe />
     </div>
