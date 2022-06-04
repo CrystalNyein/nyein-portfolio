@@ -6,17 +6,26 @@ import Banner from "./components/Banner";
 
 const App = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [section, setSection] = useState("Home");
-  const handleScroll = () => {
+  const [section, setSection] = useState("");
+  const setSectionVar = () => {
     const position = window.pageYOffset;
     if (position < 798) {
       setSection("Home");
-    } else if (position >= 798) {
+    } else if (position < 1596) {
       setSection("About");
+    } else if (position < 2394) {
+      setSection("Project");
+    } else if (position < 3192) {
+      setSection("Hire");
     }
+  };
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setSectionVar();
     setScrollPosition(position);
   };
   useEffect(() => {
+    setSectionVar();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -26,6 +35,7 @@ const App = () => {
     <div className="App">
       <AppHeader section={section} setSection={setSection} />
       <Banner />
+      <AboutMe />
       <AboutMe />
     </div>
   );
