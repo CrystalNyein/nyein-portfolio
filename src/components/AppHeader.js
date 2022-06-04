@@ -31,14 +31,14 @@ const AppHeader = (props) => {
               props.section == "Home" ? "nav-item current" : "nav-item"
             }
           >
-            <a href="">Home</a>
+            <a href="#Banner">Home</a>
           </li>
           <li
             className={
               props.section == "About" ? "nav-item current" : "nav-item"
             }
           >
-            <a href="">About me</a>
+            <a href="#AboutMe">About me</a>
           </li>
           <li
             className={
