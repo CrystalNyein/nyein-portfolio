@@ -1,7 +1,8 @@
 import React from "react";
+import "./AboutMe.css";
 
-const Aboutme = () => {
-  return <div></div>;
+const AboutMe = () => {
+  return <div className="AboutMe"></div>;
 };
 
-export default Aboutme;
+export default AboutMe;
