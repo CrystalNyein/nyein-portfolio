@@ -36,7 +36,6 @@ const App = () => {
       <AppHeader section={section} setSection={setSection} />
       <Banner />
       <AboutMe />
-      <AboutMe />
     </div>
   );
 };
