@@ -30,14 +30,17 @@
   display: inline;
   margin-left: 1.4rem;
 }
-.nav-item a {
+.nav-item button {
+  background-color: transparent;
+  border: none;
   text-decoration: none;
   color: var(--pale-yellow);
+  font-size: 1rem;
 }
-.nav-item a:hover {
+.nav-item button:hover {
   color: var(--main-yellow);
 }
-.nav-item.current a {
+.nav-item.current button {
   color: var(--main-yellow);
 }
 .nav-action {

@@ -3,6 +3,8 @@ import "./AppHeader.css";
 
 const AppHeader = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [navSection, setNavSection] = useState(props.section);
   const navLink = useRef(null);
   const toggleMenu = (e) => {
     if (menuOpen) {
@@ -16,6 +18,28 @@ const AppHeader = (props) => {
     }
     setMenuOpen(!menuOpen);
   };
+  const handleScroll = (navSec) => {
+    props.setSection(navSection);
+    setNavSection(navSec);
+    switch (navSec) {
+      case "Home":
+        setScrollPosition(0);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        break;
+      case "About":
+        setScrollPosition(798);
+        window.scrollTo({ top: 798, behavior: "smooth" });
+        break;
+      case "Project":
+        setScrollPosition(1596);
+        window.scrollTo({ top: 1596, behavior: "smooth" });
+        break;
+      case "Hire":
+        setScrollPosition(2394);
+        window.scrollTo({ top: 2394, behavior: "smooth" });
+        break;
+    }
+  };
   return (
     <div className="AppHeader">
       <div className="nav-bar">
@@ -27,32 +51,50 @@ const AppHeader = (props) => {
         </div>
         <ul className="nav-link" ref={navLink}>
           <li
-            className={
-              props.section == "Home" ? "nav-item current" : "nav-item"
-            }
+            className={navSection === "Home" ? "nav-item current" : "nav-item"}
           >
-            <a href="#Banner">Home</a>
+            <button
+              onClick={() => {
+                handleScroll("Home");
+              }}
+            >
+              Home
+            </button>
+          </li>
+          <li
+            className={navSection === "About" ? "nav-item current" : "nav-item"}
+          >
+            <button
+              onClick={() => {
+                handleScroll("About");
+              }}
+            >
+              About me
+            </button>
           </li>
           <li
             className={
-              props.section == "About" ? "nav-item current" : "nav-item"
+              navSection === "Project" ? "nav-item current" : "nav-item"
             }
           >
-            <a href="#AboutMe">About me</a>
+            <button
+              onClick={() => {
+                handleScroll("Projects");
+              }}
+            >
+              My Projects
+            </button>
           </li>
           <li
-            className={
-              props.section == "Project" ? "nav-item current" : "nav-item"
-            }
+            className={navSection === "Hire" ? "nav-item current" : "nav-item"}
           >
-            <a href="">My Projects</a>
-          </li>
-          <li
-            className={
-              props.section == "Hire" ? "nav-item current" : "nav-item"
-            }
-          >
-            <a href="">Hire me</a>
+            <button
+              onClick={() => {
+                handleScroll("Hire");
+              }}
+            >
+              Hire me
+            </button>
           </li>
         </ul>
       </div>
