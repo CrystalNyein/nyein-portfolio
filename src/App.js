@@ -5,7 +5,6 @@ import AppHeader from "./components/AppHeader";
 import Banner from "./components/Banner";
 
 const App = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
   const [section, setSection] = useState("");
   const setSectionVar = () => {
     const position = window.pageYOffset;
@@ -22,7 +21,6 @@ const App = () => {
   const handleScroll = () => {
     const position = window.pageYOffset;
     setSectionVar();
-    setScrollPosition(position);
   };
   useEffect(() => {
     setSectionVar();
