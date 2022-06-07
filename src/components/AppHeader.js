@@ -36,8 +36,6 @@ const AppHeader = (props) => {
   };
   const setSectionVar = () => {
     const position = window.pageYOffset;
-    console.log(props.sectionPosition[2]);
-    console.log(position);
     if (position < props.sectionPosition[1]) {
       setSection("Home");
     } else if (position < props.sectionPosition[2]) {
