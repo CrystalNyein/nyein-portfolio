@@ -1,39 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 import AboutMe from "./components/AboutMe";
 import AppHeader from "./components/AppHeader";
 import Banner from "./components/Banner";
 
 const App = () => {
-  const [section, setSection] = useState("Home");
-  const setSectionVar = () => {
-    const position = window.pageYOffset;
-    if (position < 798) {
-      setSection("Home");
-    } else if (position < 1596) {
-      setSection("About");
-    } else if (position < 2394) {
-      setSection("Project");
-    } else if (position < 3192) {
-      setSection("Hire");
-    }
-  };
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setSectionVar();
-  };
+  const sectionPosition = [0, 0, 0, 0];
+  const secRef1 = useRef(null);
+  const secRef2 = useRef(null);
+  const secRef3 = useRef(null);
   useEffect(() => {
-    setSectionVar();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    sectionPosition[1] = secRef1.current.offsetTop - 72;
+    sectionPosition[2] = secRef2.current.offsetTop;
   }, []);
   return (
     <div className="App">
-      <AppHeader section={section} setSection={setSection} />
+      <AppHeader sectionPosition={sectionPosition} />
       <Banner />
-      <AboutMe />
+      <AboutMe forwardedRef={secRef1} />
+      <AboutMe forwardedRef={secRef2} />
     </div>
   );
 };
