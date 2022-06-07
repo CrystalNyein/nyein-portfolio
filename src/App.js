@@ -5,7 +5,7 @@ import AppHeader from "./components/AppHeader";
 import Banner from "./components/Banner";
 
 const App = () => {
-  const [section, setSection] = useState("");
+  const [section, setSection] = useState("Home");
   const setSectionVar = () => {
     const position = window.pageYOffset;
     if (position < 798) {
