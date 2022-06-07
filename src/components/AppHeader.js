@@ -1,10 +1,10 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./AppHeader.css";
 
 const AppHeader = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [section, setSection] = useState("Home");
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [navSection, setNavSection] = useState(props.section);
   const navLink = useRef(null);
   const toggleMenu = (e) => {
     if (menuOpen) {
@@ -19,8 +19,7 @@ const AppHeader = (props) => {
     setMenuOpen(!menuOpen);
   };
   const handleScroll = (navSec) => {
-    props.setSection(navSection);
-    setNavSection(navSec);
+    setSection(navSec);
     switch (navSec) {
       case "Home":
         setScrollPosition(0);
@@ -40,6 +39,26 @@ const AppHeader = (props) => {
         break;
     }
   };
+  const setSectionVar = () => {
+    const position = window.pageYOffset;
+    console.log(position);
+    if (position < props.sectionPosition[1]) {
+      setSection("Home");
+    } else if (position < props.sectionPosition[2]) {
+      setSection("About");
+    } else if (position < props.sectionPosition[3]) {
+      setSection("Project");
+    } else {
+      setSection("Hire");
+    }
+  };
+  useEffect(() => {
+    setSectionVar();
+    window.addEventListener("scroll", setSectionVar, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", setSectionVar);
+    };
+  }, []);
   return (
     <div className="AppHeader">
       <div className="nav-bar">
@@ -50,9 +69,7 @@ const AppHeader = (props) => {
           </div>
         </div>
         <ul className="nav-link" ref={navLink}>
-          <li
-            className={navSection === "Home" ? "nav-item current" : "nav-item"}
-          >
+          <li className={section === "Home" ? "nav-item current" : "nav-item"}>
             <button
               onClick={() => {
                 handleScroll("Home");
@@ -61,9 +78,7 @@ const AppHeader = (props) => {
               Home
             </button>
           </li>
-          <li
-            className={navSection === "About" ? "nav-item current" : "nav-item"}
-          >
+          <li className={section === "About" ? "nav-item current" : "nav-item"}>
             <button
               onClick={() => {
                 handleScroll("About");
@@ -73,9 +88,7 @@ const AppHeader = (props) => {
             </button>
           </li>
           <li
-            className={
-              navSection === "Project" ? "nav-item current" : "nav-item"
-            }
+            className={section === "Project" ? "nav-item current" : "nav-item"}
           >
             <button
               onClick={() => {
@@ -85,9 +98,7 @@ const AppHeader = (props) => {
               My Projects
             </button>
           </li>
-          <li
-            className={navSection === "Hire" ? "nav-item current" : "nav-item"}
-          >
+          <li className={section === "Hire" ? "nav-item current" : "nav-item"}>
             <button
               onClick={() => {
                 handleScroll("Hire");
