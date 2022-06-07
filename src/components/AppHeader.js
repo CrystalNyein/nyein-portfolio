@@ -4,7 +4,6 @@ import "./AppHeader.css";
 const AppHeader = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [section, setSection] = useState("Home");
-  const [scrollPosition, setScrollPosition] = useState(0);
   const navLink = useRef(null);
   const toggleMenu = (e) => {
     if (menuOpen) {
@@ -22,25 +21,22 @@ const AppHeader = (props) => {
     setSection(navSec);
     switch (navSec) {
       case "Home":
-        setScrollPosition(0);
         window.scrollTo({ top: 0, behavior: "smooth" });
         break;
       case "About":
-        setScrollPosition(798);
-        window.scrollTo({ top: 798, behavior: "smooth" });
+        window.scrollTo({ top: props.sectionPosition[1], behavior: "smooth" });
         break;
       case "Project":
-        setScrollPosition(1596);
-        window.scrollTo({ top: 1596, behavior: "smooth" });
+        window.scrollTo({ top: props.sectionPosition[2], behavior: "smooth" });
         break;
       case "Hire":
-        setScrollPosition(2394);
-        window.scrollTo({ top: 2394, behavior: "smooth" });
+        window.scrollTo({ top: props.sectionPosition[3], behavior: "smooth" });
         break;
     }
   };
   const setSectionVar = () => {
     const position = window.pageYOffset;
+    console.log(props.sectionPosition[2]);
     console.log(position);
     if (position < props.sectionPosition[1]) {
       setSection("Home");
