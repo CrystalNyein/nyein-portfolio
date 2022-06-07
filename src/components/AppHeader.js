@@ -32,27 +32,28 @@ const AppHeader = (props) => {
       case "Hire":
         window.scrollTo({ top: props.sectionPosition[3], behavior: "smooth" });
         break;
-    }
-  };
-  const setSectionVar = () => {
-    const position = window.pageYOffset;
-    if (position < props.sectionPosition[1]) {
-      setSection("Home");
-    } else if (position < props.sectionPosition[2]) {
-      setSection("About");
-    } else if (position < props.sectionPosition[3]) {
-      setSection("Project");
-    } else {
-      setSection("Hire");
+      default:
     }
   };
   useEffect(() => {
+    const setSectionVar = () => {
+      const position = window.pageYOffset;
+      if (position < props.sectionPosition[1]) {
+        setSection("Home");
+      } else if (position < props.sectionPosition[2]) {
+        setSection("About");
+      } else if (position < props.sectionPosition[3]) {
+        setSection("Project");
+      } else {
+        setSection("Hire");
+      }
+    };
     setSectionVar();
     window.addEventListener("scroll", setSectionVar, { passive: true });
     return () => {
       window.removeEventListener("scroll", setSectionVar);
     };
-  }, []);
+  }, [props.sectionPosition]);
   return (
     <div className="AppHeader">
       <div className="nav-bar">
