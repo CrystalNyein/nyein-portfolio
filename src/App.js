@@ -11,7 +11,8 @@ const App = () => {
   const secRef3 = useRef(null);
   useEffect(() => {
     sectionPosition[1] = secRef1.current.offsetTop - 72;
-    sectionPosition[2] = secRef2.current.offsetTop;
+    sectionPosition[2] = secRef2.current.offsetTop - 72;
+    sectionPosition[3] = sectionPosition[2] + 737;
   }, []);
   return (
     <div className="App">
