@@ -3,3 +3,9 @@
   width: 90vw;
   margin: 0 auto;
 }
+h2 {
+  padding: 0.8rem 0;
+  font-family: var(--title-font);
+  font-size: 1.7rem;
+  letter-spacing: 0.08rem;
+}
