@@ -8,11 +8,11 @@ const sectionPosition = [0, 0, 0, 0];
 
 const App = () => {
   const secRef1 = useRef(null);
-  const secRef2 = useRef(null);
+  // const secRef2 = useRef(null);
   // const secRef3 = useRef(null);
   useEffect(() => {
     sectionPosition[1] = secRef1.current.offsetTop - 72;
-    sectionPosition[2] = secRef2.current.offsetTop - 72;
+    sectionPosition[2] = sectionPosition[1] + 737;
     sectionPosition[3] = sectionPosition[2] + 737;
   }, []);
   return (
@@ -20,7 +20,6 @@ const App = () => {
       <AppHeader sectionPosition={sectionPosition} />
       <Banner />
       <AboutMe forwardedRef={secRef1} />
-      <AboutMe forwardedRef={secRef2} />
     </div>
   );
 };
