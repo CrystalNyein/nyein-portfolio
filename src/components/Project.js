@@ -1,7 +1,7 @@
 import React from "react";
 
-const Project = () => {
-  return <div id="Project"></div>;
+const Project = (props) => {
+  return <div id="Project" className="Project" ref={props.forwardedRef}></div>;
 };
 
 export default Project;
