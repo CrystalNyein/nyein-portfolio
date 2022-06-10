@@ -3,6 +3,7 @@ import "./App.css";
 import AboutMe from "./components/AboutMe";
 import AppHeader from "./components/AppHeader";
 import Banner from "./components/Banner";
+import Project from "./components/Project";
 
 const sectionPosition = [0, 0, 0, 0];
 
@@ -20,6 +21,7 @@ const App = () => {
       <AppHeader sectionPosition={sectionPosition} />
       <Banner />
       <AboutMe forwardedRef={secRef1} />
+      <Project />
     </div>
   );
 };
