@@ -1,7 +1,15 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter-VariableFont_opsz\,wght.ttf');
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter-Italic-VariableFont_opsz\,wght.ttf');
+  font-style: italic;
+}
+
 :root {
-  --logo-font: "Cinzel Decorative", cursive;
-  --title-font: "DM Serif Text", serif;
-  --body-font: "Roboto", sans-serif;
+  --main-font: 'Inter', sans-serif;
   --main-yellow: #eb9c00;
   --pale-yellow: #fec147;
   --dark-yellow: #6b4700;
@@ -14,7 +22,7 @@ html {
 body {
   margin: 0;
   outline: none;
-  font-family: var(--body-font);
+  font-family: var(--main-font);
   /* background-color: var(--bg-yellow); */
 }
 .btn {
@@ -31,6 +39,5 @@ body {
   background-color: var(--pale-yellow);
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
