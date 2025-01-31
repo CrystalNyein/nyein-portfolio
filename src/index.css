@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-slate-900;
+}
+#root {
+  @apply h-screen lg:flex flex-wrap lg:justify-end gap-4 max-w-none !p-28;
+}
+h1,
+h2,
+a {
+  @apply text-slate-200;
+}
+p {
+  @apply text-slate-400;
+}
+section {
+  @apply text-left;
+}
+section h2 {
+  @apply uppercase tracking-widest font-bold text-sm lg:sr-only mb-8;
+}
+section p {
+  @apply text-lg;
+}
+nav {
+  @apply flex flex-col gap-4 my-16;
+}
+.nav-item {
+  @apply flex items-center gap-6 text-slate-400 font-bold uppercase tracking-wider text-sm cursor-pointer;
+}
+.nav-item span {
+  @apply w-8 h-[1px] border-transparent bg-slate-400;
+}
+.nav-item.active {
+  @apply text-slate-200;
+}
+.nav-item.active span {
+  @apply w-14 h-0.5 bg-slate-200 inline-block;
+}
