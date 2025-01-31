@@ -1,5 +1,15 @@
+import About from './components/About';
+import Experience from './components/Experience';
+import Projects from './components/Projects';
+
 const LandingPage = () => {
-  return <div>Landing Page</div>;
+  return (
+    <>
+      <About />
+      <Experience />
+      <Projects />
+    </>
+  );
 };
 
 export default LandingPage;
